@@ -1,0 +1,225 @@
+<html>
+<head>
+	<title>Prima Block</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href=".//css/create.css">
+</head>
+<body>
+	<header >
+  <div class="logo">
+    <a  routerlink="/" routerlinkactive="active" href="index.html" class="active">
+      
+    <img src=".//img/logo.png"></a>
+  </div>
+
+  <div  class="search">
+    <div class="input-search" style="margin: 0; min-width: 320px; max-width: 420px; width: 100%;">
+      <input placeholder="Enter a contract address to find a pool" style="width: 100%;" type="search" class="ng-untouched ng-pristine ng-valid">
+      <button>
+        <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+          <path  d="M5.6 0A5.567 5.567 0 0 0 0 5.6c0 3.119 2.481 5.6 5.6 5.6a5.59 5.59 0 0 0 3.6-1.3l.4.4v.65L14.65 16 16 14.65 10.95 9.6h-.7l-.375-.375A5.598 5.598 0 0 0 11.2 5.6C11.2 2.481 8.719 0 5.6 0zm0 1.6c2.24 0 4 1.76 4 4s-1.76 4-4 4-4-1.76-4-4 1.76-4 4-4z" fill="white" fill-rule="nonzero"></path>
+        </svg>
+      </button>
+      <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.6 0A5.567 5.567 0 0 0 0 5.6c0 3.119 2.481 5.6 5.6 5.6a5.59 5.59 0 0 0 3.6-1.3l.4.4v.65L14.65 16 16 14.65 10.95 9.6h-.7l-.375-.375A5.598 5.598 0 0 0 11.2 5.6C11.2 2.481 8.719 0 5.6 0zm0 1.6c2.24 0 4 1.76 4 4s-1.76 4-4 4-4-1.76-4-4 1.76-4 4-4z" fill="#1B2C59" fill-rule="nonzero"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!---->
+  <ul  class="hotlinks">
+    <li>
+      <a href="suport.html">Support</a>
+    </li>
+  </ul>
+</header>
+<main class="content narrow">
+  <h1><b>Create A Pool</b></h1>
+  <mat-horizontal-stepper aria-orientation="horizontal" class="mat-stepper-horizontal ng-tns-c10-1" linear="" role="tablist">
+      <div class="mat-horizontal-content-container"><!---->
+        <div class="mat-horizontal-stepper-content ng-tns-c10-1 ng-trigger ng-trigger-stepTransition ng-star-inserted" role="tabpanel" id="cdk-step-content-1-0" aria-labelledby="cdk-step-label-1-0" aria-expanded="true" style="transform: none; visibility: visible;"><!---->
+          <form novalidate="" class="ng-untouched ng-pristine ng-invalid ng-star-inserted" style="">
+            <app-input-group class="add">
+                  <section>
+                    <label>Your wallet address</label> <br>
+                    <app-input>
+                      <input class="address mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-invalid" formcontrolname="walletAddress" matinput="" type="text" id="mat-input-9" placeholder="" aria-invalid="false" aria-required="false">
+                    </app-input>     
+                  </section>
+            </app-input-group>
+                <p><i>All fields below are optional.</i></p>
+                <div class="category">
+                  <h3 class="title-category">Allocations</h3>
+                  <app-tooltip class="tool">
+                    <div class="tooltip-content">
+                      You have the option to define how big your pool can grow in ethereum value. Also, you may define minimum and maximum contributions from each contributor. PrimaBlock does not enforce any max or mins.
+              
+                    </div>
+                  </app-tooltip>
+                </div>
+            <div class="allocation-fields">
+              <app-input-group class="add">
+                <section>
+                  <label>Maximum Allocation (ETH)</label> <br>
+                  <app-input>
+                    <input class="mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-valid" formcontrolname="maxAllocation" matinput="" type="text" id="mat-input-10" placeholder="" aria-invalid="false" aria-required="false">
+                  </app-input>
+                </section>
+              </app-input-group>
+              <app-input-group class="add">
+                <section>
+                  <label>Maximum Per Contributor (ETH)</label> <br>
+                    <app-inpu>
+                      <input class="mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-valid" formcontrolname="maxPerContributor" matinput="" type="text" id="mat-input-11" placeholder="" aria-invalid="false" aria-required="false">
+                    </app-input>
+                </section>
+              </app-input-group>
+              <app-input-group class="add">
+                <section>
+                  <label>Minimum Per Contributor (ETH)</label> <br>
+                  <app-input>
+                    <input class="mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-valid" formcontrolname="minPerContributor" matinput="" type="text" id="mat-input-12" placeholder="" aria-invalid="false" aria-required="false">
+                  </app-input>
+                </section>
+              </app-input-group>
+            </div>
+            <hr>
+            <div class="category">
+              <h3 class="title-category">
+                Admins
+              </h3>
+              <app-tooltip class="tool">
+                <div class="tooltip-content">
+                  You may assign up to three other administrators who can manage the pool. These may be other people who you trust or alternate wallet addresses that you control.
+                </div>
+              </app-tooltip>
+            </div>
+            <app-input-group class="add">
+              <section class="add">
+                <label>Admin 1 Wallet Address</label> <br>
+                  <app-input>
+                    <input _ngcontent-c9="" class="mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-valid" formcontrolname="admin1" matinput="" type="text" id="mat-input-13" placeholder="" aria-invalid="false" aria-required="false">          
+                  </app-input>        
+              </section>
+            </app-input-group>
+            <app-input-group class="add">
+              <section class="add">
+                <label>Admin 2 Wallet Address</label> <br>
+                  <app-input>
+                    <input class="mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-valid" formcontrolname="admin2" matinput="" type="text" id="mat-input-14" placeholder="" aria-invalid="false" aria-required="false">        
+                  </app-input>
+                </section>
+            </app-input-group>
+            <app-input-group class="add">
+              <section class="add">
+                <label>Admin 3 Wallet Address</label> <br>
+                <app-input>
+                  <input class="mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-valid" formcontrolname="admin3" matinput="" type="text" id="mat-input-15" placeholder="" aria-invalid="false" aria-required="false">          
+                </app-input>
+              </section>
+            </app-input-group>
+            <hr>        
+            <div class="category">
+              <h3 class="title-category">Whitelist</h3>
+              <app-tooltip class="tool">
+                <div class="tooltip-content">
+                  You may decide whether to enforce a whitelist, in which case only contributors on the list may contribute in your pool. If you click Yes, you will specify the addresses after launch. Read more about whitelist gas prices in our FAQ.       
+                </div>
+              </app-tooltip>
+            </div>
+            <app-input-group class="add">
+              <section class="add">
+                <label>Create Whitelist</label> <br>
+                <app-boolean-switch formcontrolname="whitelist" class="ng-untouched ng-pristine ng-valid">
+                  <div class="boolean-switch">
+                    Yes
+                    <button>
+                        <div class="knob"></div>
+                    </button>
+                    No
+                  </div>
+                </app-boolean-switch>
+                <p _ngcontent-c9="">You will be able to specify addresses after launch.</p>       
+              </section>
+            </app-input-group>
+            <hr>
+            <div class="category">
+              <h3 class="title-category">Fees</h3>
+              <app-tooltip class="tool">
+                <div class="tooltip-content">
+                  You may charge your contributors a fee for the hard work and value that you bring to them. PrimaBlock’s fee is fixed at 0,5%.
+                </div>
+              </app-tooltip>
+            </div>
+            <app-input-group class="add">
+              <section class="add">
+                <label>Pool Percentage</label> <br>
+                <app-input>
+                  <input class="mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-valid" formcontrolname="fee" matinput="" max="50" min="0" size="6" type="number" id="mat-input-16" placeholder="" aria-invalid="false" aria-required="false">
+                </app-input>
+                <ul>
+                  <li>
+                    <u>0%</u> goes to you.
+                  </li>
+                  <li>
+                    <u>0.5%</u> goes to PrimaBlock.
+                  </li>
+                  <li>
+                    <b>Total: <u>0.50%</u></b>
+                  </li>
+                </ul>
+              </section>
+            </app-input-group>
+            <hr>
+            <div class="category">
+              <h3 class="title-category">TOKEN DISTRIBUTION</h3>
+              <app-tooltip class="tool">
+                <div class="tooltip-content">
+                  You can elect to have PrimaBlock automatically distribute tokens to the contributors of your pool. Otherwise, each of your contributors will have to claim their tokens from the pool by clicking on the 'GET MY TOKENS' button.
+                </div>
+              </app-tooltip>
+            </div>
+            <app-input-group class="add">
+              <section class="add">
+                <label>Distribute Tokens Automatically</label> <br>
+                <app-boolean-switch formcontrolname="automaticDistribution"  class="ng-untouched ng-pristine ng-valid">
+                  <div class="boolean-switch">
+                    Yes
+                    <button _ngcontent-c15="">
+                        <div _ngcontent-c15="" class="knob"></div>
+                    </button>
+                    No
+                  </div>
+                </app-boolean-switch>     
+              </section>
+            </app-input-group>
+            <hr>
+            <app-button-set class="next">
+              <app-styled-button>
+                <button class="primary" matsteppernext="" disabled="">
+                  Submit
+                </button>  
+              </app-styled-button>       
+            </app-button-set>
+          </form>
+        </div>
+        <div class="mat-horizontal-stepper-content ng-tns-c10-1 ng-trigger ng-trigger-stepTransition ng-star-inserted" role="tabpanel" id="cdk-step-content-1-1" aria-labelledby="cdk-step-label-1-1" aria-expanded="false" style="transform: translate3d(100%, 0px, 0px); visibility: hidden;">
+        </div>
+      </div>
+    </mat-horizontal-stepper>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3">
+        <a href="desclimer.html" class="">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script async src="/assets/scripts/autotrack.js"></script>
+<script src=".//js/ga.js"></script>
+</body>
+</html>
